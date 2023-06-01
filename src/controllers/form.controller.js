@@ -1,9 +1,9 @@
 function getSiteHandler(req, res) {
-  res.send('get testing');
+  res.render('form');
 }
 
 function postFormHandler(req, res) {
-  req.send('post testing');
+  res.render('form');
 }
 
 module.exports = { getSiteHandler, postFormHandler };
