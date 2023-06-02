@@ -6,7 +6,7 @@ function getSiteHandler(req, res) {
 async function postFormHandler(req, res) {
   try {
     const registration = new Registration(req.body);
-    registration.save();
+    await registration.save();
     res.status(201).render('form', {
       title: 'Registration Form',
       data: req.body,
@@ -18,5 +18,12 @@ async function postFormHandler(req, res) {
   }
 }
   
-
-module.exports = { getSiteHandler, postFormHandler };
+async function getRegistrationsHandler(req, res) {
+  try {
+    const docs = await Registration.find();
+    res.render('registrations', { title: 'Listin Registrations', registrations: docs });
+  } catch (err) {
+    res.send('Sorry, something went wrong');
+  };
+}
+module.exports = { getSiteHandler, postFormHandler, getRegistrationsHandler };

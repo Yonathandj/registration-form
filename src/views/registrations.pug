@@ -1,0 +1,14 @@
+extends layout
+block content
+  if registrations.length
+    table
+      tr
+        th Name
+        th Email
+      tr
+      for registration of registrations
+        tr
+          td= registration.name
+          td= registration.email
+  else 
+    p No registration yet
