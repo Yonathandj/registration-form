@@ -1,8 +1,11 @@
 const express = require('express');
 const formRoute = express.Router();
+
 const { getSiteHandler, postFormHandler } = require('../controllers/form.controller');
- 
-formRoute.get('/', getSiteHandler);
-formRoute.post('/', postFormHandler);
+const validateUser = require('./../validators/form.validator'); 
+
+formRoute.route('/')
+  .get(getSiteHandler)
+  .post(validateUser, postFormHandler);
 
 module.exports = formRoute;
