@@ -10,7 +10,7 @@ function postFormHandler(req, res) {
     email,
   };
   formModel.push(newData);
-  res.render('form', {
+  res.status(201).render('form', {
     title: 'Registration Form',
     data: req.body,
   });
