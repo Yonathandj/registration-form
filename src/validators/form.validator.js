@@ -17,6 +17,8 @@ validateUser = [
     .not()
     .isEmpty()
     .withMessage('Invalid email address!')
+    .bail()
+    .isEmail()
     .bail(),
   (req, res, next) => {
     const errors = validationResult(req);
