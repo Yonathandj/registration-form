@@ -22,9 +22,11 @@ validateUser = [
     .bail(),
   (req, res, next) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty())
-      return res.status(422).json({errors: errors.array()});
-    next();
+    if (!errors.isEmpty()) {
+      res.status(422).render('form', {title: 'Form Registration', errors: errors.array()})
+    } else {
+      next();
+    }
   },
 ];
 

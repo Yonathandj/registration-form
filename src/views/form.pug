@@ -1,5 +1,14 @@
 extends layout
 block content
+  -data = data || {}
+
+  if errors
+    ul
+      for error in errors
+        li= error.msg
+  else if data.name && data.email
+    p Welcome home
+
   form(method="POST" action=".")
     label(for="name") Name:
     input(
@@ -7,6 +16,7 @@ block content
       type="text"
       name="name"
       placeholder="Please input your name"
+      value=data.name
     )
 
     label(for="email") Email:
@@ -15,5 +25,6 @@ block content
       type="email"
       name="email"
       placeholder="Please input your email address"
+      value=data.email
     )
     input(type="submit" value="Submit")

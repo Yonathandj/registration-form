@@ -10,7 +10,10 @@ function postFormHandler(req, res) {
     email,
   };
   formModel.push(newData);
-  res.render('form', {title: 'Registration Form'});
+  res.render('form', {
+    title: 'Registration Form',
+    data: req.body,
+  });
 }
 
 module.exports = { getSiteHandler, postFormHandler };
