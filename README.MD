@@ -1,6 +1,6 @@
 # INFORMASI
 ----------------
-- Saya akan membuat form registrasi dengan :
+- Saya membuat form registrasi :
 1. Express
 2. Pug
 3. Express-validator
