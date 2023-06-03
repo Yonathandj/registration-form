@@ -14,6 +14,6 @@
 
 # Path
 - Pada kode ini path yang tersedia yaitu :
-GET /
-POST /
-GET /registrations
+1. GET   /
+2. POST /
+3. GET /registrations
