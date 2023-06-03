@@ -21,7 +21,7 @@ async function postFormHandler(req, res) {
 async function getRegistrationsHandler(req, res) {
   try {
     const docs = await Registration.find();
-    res.render('registrations', { title: 'Listin Registrations', registrations: docs });
+    res.render('registrations', { title: 'Listing Registrations', registrations: docs });
   } catch (err) {
     res.send('Sorry, something went wrong');
   };
